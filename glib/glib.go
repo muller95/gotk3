@@ -1265,9 +1265,15 @@ func (v *Value) SetPointer(p uintptr) {
 	C.g_value_set_pointer(v.native(), C.gpointer(p))
 }
 
-// GetInt is a wrapper around g_value_get_string().  GetString()
+// GetInt is a wrapper around g_value_get_int().  GetInt()
 func (v *Value) GetInt() (int) {
 	return int(C.g_value_get_int(v.native()))
+}
+
+
+// GetInt is a wrapper around g_value_get_double().  GetDouble()
+func (v *Value) GetDouble() (float64) {
+	return float64(C.g_value_get_double(v.native()))
 }
 
 // GetPointer is a wrapper around g_value_get_pointer().
